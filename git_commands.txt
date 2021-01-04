@@ -28,13 +28,13 @@ git clone https://github.com/libgit2/libgit2
 git add <filename>                  //start tracking file -> put it into INDEX cash,
                                     //must be re-added after any modification before commit
 git add *.c                         //adding all .c extension files
-git add -A				//all files/subdirectories new, modified, and deleted files
-git add .				//only stages files in the current directory and not any subdirectories
-git add -u				//modified and deleted files, but not any new files
+git add -A				            //all files/subdirectories new, modified, and deleted files
+git add .				            //only stages files in the current directory and not any subdirectories
+git add -u				            //modified and deleted files, but not any new files
 
 git commit                          //commit STAGED/ADDED changes
-git commit -m "commit message"              //-m : commit message
-git commit -a -m 'commit message'       //-a : skipping staged area/index -> commit all the changes
+git commit -m "commit message"      //-m : commit message
+git commit -a -m 'commit message'   //-a : skipping staged area/index -> commit all the changes
 
 git rm <filename>                   //Removing Files from tracked files/staged area and directory -> COMMIT
 git rm --cached <filename>          //not deleted from directory
