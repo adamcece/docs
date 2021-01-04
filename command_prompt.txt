@@ -1,0 +1,95 @@
+INSTALL: node, react, sass, mongodb, git, heroku, visual studio code(VSC), (Atom),
+TortoiseGit,
+
+----DEV PASSW.--------------------------------------
+----------------------------------------------------
+
+Github/Stackoverflow/Heroku:
+bm4bwz@gmail.com / Ceceteam06.
+
+----------------------------------------------------
+----Command Line------------------------------------
+----------------------------------------------------
+
+node -v
+npm -v
+git --version
+sass --version
+
+npm install npm@latest -g
+npm install -g sass
+npm install mongodb
+npm install -g create-react-app
+(npm install -g heroku) - nor recommended -> download & install
+
+---------------------------------------------------
+----React:-----------------------------------------
+---------------------------------------------------
+
+npx create-react-app myfirstreact
+cd myfirstreact
+myfirstreact>npm start
+
+--------------
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+---------------------------------------------------
+----Node:------------------------------------------
+---------------------------------------------------
+C:\Users\adamcece\node_modules\
+C:\Users\adamcece\myfirst.js
+node myfirst.js
+http://localhost:8080
+
+---------------------------------------------------
+----GIT:-------------------------------------------
+---------------------------------------------------
+
+---------------------------------------------------
+----Heroku:----------------------------------------
+---------------------------------------------------
+heroku login, download/install heroku toolbelt kit
+
+----static web server------------------------------
+- First create a new folder and access it from your terminal
+
+npm install node-static
+npm init
+
+- insert start .js into package.json:
+
+  "scripts": {
+  "test": "make test",
+  "start": "node index.js"
+  },
+
+- create index.js:
+
+    var static = require('node-static');
+    var file = new static.Server();
+    require('http').createServer(function(request, response) {
+      request.addListener('end', function() {
+        file.serve(request, response);
+      }).resume();
+    }).listen(process.env.PORT || 3000);
+
+(git init)
+(git add .)
+(git commit -am "initial commit")
+
+heroku login
+heroku create your-app-name
+git push heroku main    //master?
+heroku ps:scale web=1
+heroku open
+
+------example app
+git clone https://github.com/heroku/node-js-getting-started.git
+cd node-js-getting-started
+heroku create
+git push heroku main
+heroku ps:scale web=1			//start 1 app instance
+heroku open				//open app in browser
+heroku logs --tail			//log in cmd [CTRL+C] to end
