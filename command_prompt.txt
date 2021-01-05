@@ -13,6 +13,7 @@ bm4bwz@gmail.com / Ceceteam06.
 
 node -v
 npm -v
+npm -v express
 git --version
 sass --version
 
