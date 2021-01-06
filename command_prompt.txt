@@ -57,7 +57,7 @@ heroku login, download/install heroku toolbelt kit
 - First create a new folder and access it from your terminal
 
 npm install node-static
-npm init
+npm init <--yes>               //creates/initialize package.json file for web app
 
 - insert start .js into package.json:
 
@@ -80,7 +80,7 @@ npm init
 (git add .)
 (git commit -am "initial commit")
 
-heroku login
+heroku login <-i>           //-i: asks for login/password
 heroku create your-app-name
 git push heroku main    //master?
 heroku ps:scale web=1
@@ -89,8 +89,12 @@ heroku open
 ------example app
 git clone https://github.com/heroku/node-js-getting-started.git
 cd node-js-getting-started
-heroku create
-git push heroku main
-heroku ps:scale web=1			//start 1 app instance
-heroku open				//open app in browser
-heroku logs --tail			//log in cmd [CTRL+C] to end
+heroku create <app_name>  //create a heroku app
+git push heroku main      //push git repo to heroku
+heroku ps:scale web=1			//start 1 app instance , ps scales 1 web type dyno (there are other types as well)
+heroku open               //open app in browser
+heroku local web          //run app locally
+heroku ps                 //see free dyno hours
+heroku logs -n 200        //last n pieces of logs (--num)
+heroku logs -t            //(--tail) recent and real time logs,[CTRL+C] to end
+heroku buildpacks         //if no node version written -> latest stable version
